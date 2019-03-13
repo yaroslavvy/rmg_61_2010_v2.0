@@ -1,4 +1,5 @@
 #include "pch.h"
+
 #include "TwoDimensionalArray.h"
 
 #include <windows.h>
@@ -15,12 +16,18 @@
 #include <functional>
 #include <sstream>
 
-TwoDimensionalArray::TwoDimensionalArray() {}
+TwoDimensionalArray::TwoDimensionalArray(const std::string& fout) {
+	readFromFile(fout);
+}
 
 TwoDimensionalArray::TwoDimensionalArray(const TwoDimensionalArray& a)
 	: vec(a.vec) {}
 
 TwoDimensionalArray::~TwoDimensionalArray() {}
+
+const std::vector<std::vector<std::string>>& TwoDimensionalArray::getVector() const {
+	return vec;
+}
 
 void TwoDimensionalArray::write(std::ofstream* fout) const {
 	std::vector <std::vector<std::string>>::const_iterator row;

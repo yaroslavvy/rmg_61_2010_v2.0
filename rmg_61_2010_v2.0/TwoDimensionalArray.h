@@ -10,9 +10,11 @@ class TwoDimensionalArray :	public PrintableObject {
 
 public:
 
-	TwoDimensionalArray();
+	TwoDimensionalArray(const std::string&);
 	TwoDimensionalArray(const TwoDimensionalArray&);
 	virtual ~TwoDimensionalArray();
+
+	const std::vector<std::vector<std::string>>& getVector() const;
 
 	virtual void write(std::ofstream*) const;
 

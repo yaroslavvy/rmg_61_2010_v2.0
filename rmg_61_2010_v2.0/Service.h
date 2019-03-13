@@ -14,4 +14,6 @@ public:
 	virtual ~Service();
 
 	static void writeInFile(const std::string&, const std::vector<PrintableObject*>&);
+	static bool isIntegerFromString(const std::string&);
+	static bool isDoubleFromString(const std::string&);
 };
