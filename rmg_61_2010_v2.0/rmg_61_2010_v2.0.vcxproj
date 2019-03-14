@@ -153,7 +153,9 @@
   <ItemGroup>
     <ClInclude Include="Element.h" />
     <ClInclude Include="ElementDataBase.h" />
+    <ClInclude Include="IndividualSubstanceComponent.h" />
     <ClInclude Include="Inscription.h" />
+    <ClInclude Include="MixtureOfComponents.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PrintableObject.h" />
     <ClInclude Include="Service.h" />
@@ -162,6 +164,8 @@
   <ItemGroup>
     <ClCompile Include="Element.cpp" />
     <ClCompile Include="ElementDataBase.cpp" />
+    <ClCompile Include="IndividualSubstanceComponent.cpp" />
+    <ClCompile Include="MixtureOfComponents.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

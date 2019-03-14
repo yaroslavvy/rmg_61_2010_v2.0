@@ -18,6 +18,9 @@ public:
 	const int getNumberZ() const;
 	const double getAtomicMass() const;
 
+	bool operator== (const Element&) const;
+	bool operator< (const Element&) const;
+
 	virtual void write(std::ofstream*) const;
 
 private:

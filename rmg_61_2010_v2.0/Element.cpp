@@ -46,6 +46,24 @@ const double Element::getAtomicMass() const {
 	return atomicMass;
 }
 
+bool Element::operator== (const Element& right) const{
+	if ((numberZ == right.getNumberZ()) && (symbol == right.getSymbol()) && (atomicMass == right.getAtomicMass()) && (nameEN == right.getNameEN())) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+bool Element::operator< (const Element& right) const{
+	if (numberZ < right.getNumberZ()) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
 void Element::write(std::ofstream* fout) const {
-	(*fout) << symbol;
+	(*fout) << symbol << "\n";
 }
