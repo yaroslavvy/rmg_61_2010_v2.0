@@ -14,10 +14,10 @@ public:
 	ElementDataBase(const TwoDimensionalArray&);
 	virtual ~ElementDataBase();
 
-	const Element &getElement(int);
-	const Element &getElement(std::string);
+	const Element &getElement(int) const;
+	const Element &getElement(const std::string) const;
 
-	virtual void write(std::ofstream*) const;
+	virtual void write(std::ostream*) const;
 
 private:
 	std::map<int, Element> indexNumberZBase;

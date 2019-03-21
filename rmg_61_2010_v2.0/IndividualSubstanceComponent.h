@@ -21,13 +21,17 @@ public:
 	const std::vector<Element> &getVector() const;
 
 	const double molecularMass() const;
-	const double averageAtomicMatrixNumber() const;
+	const int sumAtomicNumber() const;
+	const int amountOfAtoms() const;
+	const int amountAtomsOfElementInSubstance(const Element&) const;
 
-	virtual void write(std::ofstream*) const;
+	const IndividualSubstanceComponent &operator+=(const IndividualSubstanceComponent &);
+
+	virtual void write(std::ostream*) const;
 private:
 	std::vector<Element> vec;
 
-	static double sumOfAtomicMass(const double&, const Element&);
-	static int sumOfAtomicNumber(const int&, const Element&);
+	static const double sumOfAtomicMass(const double&, const Element&);
+	static const int sumOfAtomicNumber(const int&, const Element&);
 };
 

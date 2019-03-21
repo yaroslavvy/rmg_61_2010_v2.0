@@ -21,7 +21,7 @@ public:
 	bool operator== (const Element&) const;
 	bool operator< (const Element&) const;
 
-	virtual void write(std::ofstream*) const;
+	virtual void write(std::ostream*) const;
 
 private:
 

@@ -29,7 +29,7 @@ const std::vector<std::vector<std::string>>& TwoDimensionalArray::getVector() co
 	return vec;
 }
 
-void TwoDimensionalArray::write(std::ofstream* fout) const {
+void TwoDimensionalArray::write(std::ostream* fout) const {
 	std::vector <std::vector<std::string>>::const_iterator row;
 	std::vector<std::string>::const_iterator column;
 	for (row = vec.begin(); row < vec.end(); row++) {

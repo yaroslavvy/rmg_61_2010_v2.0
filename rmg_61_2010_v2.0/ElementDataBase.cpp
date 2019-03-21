@@ -91,21 +91,21 @@ ElementDataBase::ElementDataBase(const TwoDimensionalArray& a) {
 
 ElementDataBase::~ElementDataBase() {}
 
-const Element &ElementDataBase::getElement(int numberZ) {
+const Element &ElementDataBase::getElement(int numberZ) const {
 	if (indexNumberZBase.find(numberZ) != indexNumberZBase.end()) {
 		return indexNumberZBase.find(numberZ)->second;
 	}
 	return indexNumberZBase.find(0)->second;
 }
 
-const Element &ElementDataBase::getElement(std::string symbol) {
+const Element &ElementDataBase::getElement(const std::string symbol) const {
 	if (indexSymbolBase.find(symbol) != indexSymbolBase.end()) {
 		return indexSymbolBase.find(symbol)->second;
 	}
 	return indexSymbolBase.find("Undefined element")->second;
 }
 
-void ElementDataBase::write(std::ofstream* fout) const {
+void ElementDataBase::write(std::ostream* fout) const {
 	std::map<int, Element>::const_iterator i;
 	(*fout) << "Atomic number" << ";" << "Element Symbol" << ";" << "Atomic mass" << ";" << "Element name" << "\n";
 	for (i = indexNumberZBase.begin(); i != indexNumberZBase.end(); i++) {

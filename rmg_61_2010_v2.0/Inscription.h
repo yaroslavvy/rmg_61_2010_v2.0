@@ -30,7 +30,7 @@ public:
 	const Inscription<T> &operator= (const T&);
 	const Inscription<T> &operator= (const Inscription<T>&);
 	
-	virtual void write(std::ofstream*) const;
+	virtual void write(std::ostream*) const;
 	
 private:
 
@@ -73,6 +73,6 @@ const Inscription<T> &Inscription<T>::operator= (const Inscription<T> &right) {
 }
 
 template <class T>
-void Inscription<T>::write(std::ofstream* fout) const {
+void Inscription<T>::write(std::ostream* fout) const {
 	(*fout) << getInscription() << "\n";
 }

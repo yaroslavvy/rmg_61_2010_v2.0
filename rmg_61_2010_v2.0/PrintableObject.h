@@ -8,6 +8,6 @@ public:
 
 	virtual ~PrintableObject();
 
-	virtual void write(std::ofstream*) const = 0;
+	virtual void write(std::ostream*) const = 0;
 };
 

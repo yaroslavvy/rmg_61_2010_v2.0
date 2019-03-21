@@ -64,6 +64,6 @@ bool Element::operator< (const Element& right) const{
 	}
 }
 
-void Element::write(std::ofstream* fout) const {
+void Element::write(std::ostream* fout) const {
 	(*fout) << symbol << "\n";
 }

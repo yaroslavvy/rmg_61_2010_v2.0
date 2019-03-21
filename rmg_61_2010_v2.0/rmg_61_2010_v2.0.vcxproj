@@ -156,9 +156,12 @@
     <ClInclude Include="IndividualSubstanceComponent.h" />
     <ClInclude Include="Inscription.h" />
     <ClInclude Include="MixtureOfComponents.h" />
+    <ClInclude Include="ParserException.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PrintableObject.h" />
     <ClInclude Include="Service.h" />
+    <ClInclude Include="SubstanceLexAnalyser.h" />
+    <ClInclude Include="SubstanceSyntaxAnalyser.h" />
     <ClInclude Include="TwoDimensionalArray.h" />
   </ItemGroup>
   <ItemGroup>
@@ -166,6 +169,7 @@
     <ClCompile Include="ElementDataBase.cpp" />
     <ClCompile Include="IndividualSubstanceComponent.cpp" />
     <ClCompile Include="MixtureOfComponents.cpp" />
+    <ClCompile Include="ParserException.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -175,6 +179,8 @@
     <ClCompile Include="PrintableObject.cpp" />
     <ClCompile Include="rmg_61_2010_v2.0.cpp" />
     <ClCompile Include="Service.cpp" />
+    <ClCompile Include="SubstanceLexAnalyser.cpp" />
+    <ClCompile Include="SubstanceSyntaxAnalyser.cpp" />
     <ClCompile Include="TwoDimensionalArray.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

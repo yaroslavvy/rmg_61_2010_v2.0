@@ -16,7 +16,7 @@ public:
 
 	const std::vector<std::vector<std::string>>& getVector() const;
 
-	virtual void write(std::ofstream*) const;
+	virtual void write(std::ostream*) const;
 
 	bool readFromFile(const std::string&);
 

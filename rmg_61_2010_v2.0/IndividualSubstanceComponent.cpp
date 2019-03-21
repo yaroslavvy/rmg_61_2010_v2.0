@@ -37,23 +37,40 @@ const double IndividualSubstanceComponent::molecularMass() const {
 	return std::accumulate(vec.begin(), vec.end(), 0.0, IndividualSubstanceComponent::sumOfAtomicMass);
 }
 
-const double IndividualSubstanceComponent::averageAtomicMatrixNumber() const {
-	return (static_cast<double>(std::accumulate(vec.begin(), vec.end(), 0, IndividualSubstanceComponent::sumOfAtomicNumber)))/(static_cast<double>(vec.size()));
+const int IndividualSubstanceComponent::sumAtomicNumber() const {
+	return std::accumulate(vec.begin(), vec.end(), 0, IndividualSubstanceComponent::sumOfAtomicNumber);
 }
 
-void IndividualSubstanceComponent::write(std::ofstream* fout) const {
+const int IndividualSubstanceComponent::amountOfAtoms() const {
+	return vec.size();
+}
+
+const int IndividualSubstanceComponent::amountAtomsOfElementInSubstance(const Element& element) const {
+	return std::count(vec.begin(), vec.end(), element);
+}
+
+const IndividualSubstanceComponent &IndividualSubstanceComponent::operator+=(const IndividualSubstanceComponent &right) {
+	std::copy(right.getVector().begin(), right.getVector().end(), std::back_inserter(this->getVector()));
+	return *this;
+}
+
+void IndividualSubstanceComponent::write(std::ostream* fout) const {
 	std::set<Element> setCopyVec;
 	std::copy(vec.begin(), vec.end(), std::inserter(setCopyVec, setCopyVec.begin()));
+	int amount = 0;
 	for (std::set<Element>::const_iterator a = setCopyVec.begin(); a != setCopyVec.end(); a++) {
-		(*fout) << a->getSymbol() << std::count(vec.begin(), vec.end(), (*a));
+		(*fout) << a->getSymbol();
+		amount = std::count(vec.begin(), vec.end(), (*a));
+		if (amount > 1) {
+			(*fout) << amount;
+		}
 	}
-	(*fout) << "\n";
 }
 
-double IndividualSubstanceComponent::sumOfAtomicMass(const double &accumulator, const Element &next) {
+const double IndividualSubstanceComponent::sumOfAtomicMass(const double &accumulator, const Element &next) {
 	return (accumulator + (next.getAtomicMass()));
 }
 
-int IndividualSubstanceComponent::sumOfAtomicNumber(const int &accumulator, const Element &next) {
+const int IndividualSubstanceComponent::sumOfAtomicNumber(const int &accumulator, const Element &next) {
 	return (accumulator + (next.getNumberZ()));
 }
